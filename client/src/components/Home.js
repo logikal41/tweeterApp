@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import PostList from './PostList';
 import PostForm from './PostForm';
 import axios from 'axios';
+import '../main.css';
 
 class Home extends Component {
   state= { posts: [] }
@@ -23,17 +24,30 @@ class Home extends Component {
       }) 
   }
 
+  deletePost = (id) => {
+    axios.delete(`/api/posts/${id}`)
+      .then( () => {
+        const{ posts } = this.state;
+        this.setState({ posts: posts.filter( t=> t.id !== id) })
+      });
+  }
+
 
   render() {
     return (
-      <div>
-        <PostForm 
-        addPost={this.addPost}
-        />
-        <br />
-        <PostList 
-        posts={this.state.posts}
-        />
+      <div className="buffer">
+        <Container textAlign='center'>
+          <div className="postForm">
+            <PostForm 
+            addPost={this.addPost}
+            />
+          </div>
+          <br />
+          <PostList 
+          posts={this.state.posts}
+          deletePost={this.deletePost}
+          />
+        </Container>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
 import UpdateProfile from './UpdateProfile';
 
@@ -28,34 +28,33 @@ class Bio extends Component {
       render() {
           if (this.state.toggle) {
             return (
-            <div className="container">
-                <h2> SHOWING Bio </h2>
-                {this.state.description}
-                <img src={this.state.profile_image} />
-                <br />
-                <input 
-                className="col s2 offset-s5 waves-light btn" 
-                type="button" 
-                value="Update Profile" 
-                onClick= {this.toggleProfile}
-                />
-            </div>
+                <div className="buffer">
+            
+                    <Container textAlign='center'>
+                        <h1 className="descriptionTitle">User Profile</h1>
+                        <img src={this.state.profile_image} className='bio-image' />
+                        <h3 className="descriptionBody"> {this.state.description} </h3>
+                    
+                        <button class="ui inverted grey button" onClick={this.toggleProfile}>
+                        Update Profile
+                        </button>
+                    </Container>
+                </div>
             )}
             else {
                 return(
-                    <div className="container">
-                    <h1> UPDATING PROFILE </h1>
-                        <UpdateProfile 
-                        description={this.state.description}
-                        profile_image={this.state.profile_image}
-                        updateBio={this.updateBio}
-                        />
-                        <input 
-                        className="col s2 offset-s5 waves-light btn" 
-                        type="button" 
-                        value="Cancel Update" 
-                        onClick= {this.toggleProfile}
-                        />
+                    <div>
+                        <Container textAlign='center'>
+                            <h1 className="description"> Profile Update Page </h1>
+                            <UpdateProfile 
+                            description={this.state.description}
+                            profile_image={this.state.profile_image}
+                            updateBio={this.updateBio}
+                            />
+                            <button className="ui inverted grey button cancel" onClick={this.toggleProfile}>
+                            Cancel Update 
+                            </button>
+                        </Container>
                     </div>
                 )
             }

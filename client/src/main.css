@@ -1,0 +1,62 @@
+.body {
+    background-color: #10BEA7;
+}
+
+.bio-image {
+    border: 2px solid black;
+    height: 250px;
+    border-radius: 40%;
+    margin-top: 30px;
+}
+
+.navigation {
+    background: rgb(197, 194, 194);
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+.description {
+    font-family: 'Pacifico', cursive;
+}
+
+.descriptionBody {
+    font-family: 'Pacifico', cursive;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0 50px 0;
+}
+
+.buffer {
+    margin-top: 50px;
+}
+
+.input { 
+    margin-bottom: 25px;
+}
+
+.space {
+    height: 10px;
+}
+
+.tweet {
+    border: 2px solid black;
+    width: 50%;
+    margin: 15px auto;
+    padding: 10px;
+    background: rgb(197, 194, 194);
+    border-radius: 20px;
+}
+
+.message {
+    margin-bottom: 15px;
+}
+
+.postForm {
+    margin-bottom: 30px;
+}
+
+.underline {
+    text-decoration: underline;
+}

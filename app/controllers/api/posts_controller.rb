@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    render json: Post.all
+    render json: Post.all.order(id: :desc)
   end
 
   def show
@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
     end
   end
     
-  def delete
+  def destroy
     Post.find(params[:id]).destroy
   end
 

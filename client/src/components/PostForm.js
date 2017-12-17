@@ -10,7 +10,7 @@ class PostForm extends React.Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault();
+        // e.preventDefault();
         this.props.addPost(this.state.message)
         this.setState({ message: ''})
     }
@@ -19,6 +19,7 @@ class PostForm extends React.Component {
         return(
             <div className="container">
                 <AddPost 
+                message={this.state.message}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 />

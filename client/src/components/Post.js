@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Post = ( {message} ) => (
-    <div className="col s12">
-        <div className="col m1">
-            <h1> {message} </h1>
+const Post = ( {id, message, deletePost} ) => (
+    <div className="tweet">
+        <div className="message">
+            <h1 className="description"> {message} </h1>
         </div>
-        <button type="button" className="col m1 waves-light btn">
+        <button type="button" className="ui primary button">
             update  
         </button>
-        <button type="button" className="col m1 waves-light btn">
+        <button type="button" className="ui button" onClick={() => deletePost(id)}>
             delete 
         </button>
     </div>
